@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -65,4 +65,3 @@ char **strtow(char *str)
 	aout[i] = NULL;
 	return (aout);
 }
-
