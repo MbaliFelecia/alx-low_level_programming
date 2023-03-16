@@ -1,4 +1,4 @@
-#include "MAIN.H"
+#include "main.h"
 #include <stdlib>
 
 /* malloc - to allocate memory
