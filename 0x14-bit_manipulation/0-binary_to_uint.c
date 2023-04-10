@@ -20,7 +20,7 @@ unsigned int binary_to_uint(const char *b)
 		for (j = 0; b[j] != '\0'; j++)
 			;
 
-		for (j--,base_two = 1; j >= 0; j-- , base_two *= 2)
+		for (j--, base_two = 1; j >= 0; j--, base_two *= 2)
 		{
 			if (b[j] != '0' && b[j] != '1')
 			{
