@@ -1,4 +1,4 @@
-#include "main.h
+#include "main.h"
 
 /**
  * change binary_to _uint - convert binary number to
