@@ -22,7 +22,7 @@ void error_file(int file_from, int file_to, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
+}
 
 /**
  * main - check the code.
