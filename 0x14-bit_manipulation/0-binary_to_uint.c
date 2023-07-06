@@ -5,8 +5,6 @@
  * returns the converted number
  * b is null
  */
-
-
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int un;
@@ -34,4 +32,5 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	return (un);
+
 }
