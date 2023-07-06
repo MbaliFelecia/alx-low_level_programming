@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <main.h>
+#include "main.h"
 
 /** a function that changes binary to unsigned int
  * b  is a pointer to a string
@@ -15,7 +14,7 @@ unsigned int binary_to_uint(const char *b)
 	int str, base_two;
 
 	if (!b)
-		return(0);
+		return (0);
 
 	un = 0;
 
@@ -23,7 +22,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (str--, base_two = 1; str >= 0; str--, base_two *= 2)
 	{
-		if (b[str] != '0'&& b[str] != '1')
+		if (b[str] != '0' && b[str] != '1')
 		{
 			return (0);
 		}
