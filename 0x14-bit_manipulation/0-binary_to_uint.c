@@ -1,9 +1,11 @@
 #include "main.h"
 
-/** a function that changes binary to unsigned int
- * b  is a pointer to a string
- * returns the converted number
- * b is null
+/**
+ * binary_to_unit - a function that changes binary to an
+ * unsigned int.
+ * @b: binary string.
+ *
+ * Return: unsigned int value of binary.
  */
 unsigned int binary_to_uint(const char *b)
 {
