@@ -1,30 +1,34 @@
-#include <main.h>
+#include "main.h"
 
 /**
- * creat_file - creates a file
+ * append_text_to_file - appends text at the end of the file
  * @filename: filename.
- * @text_content: content writen in file
+ * @text_content: added content.
  *
- * Return: 1 if it is successful. -1 if it fails.
+ * Return: 1 if the file exists. -1 if the file does not exist
+ * or if it fails.
  */
-int create_file(const char *filename, char *text_content)
+int append_text_to_file(const char *filename, char *text_content)
 {
 	int fn, nletters, cwr;
 
 	if (!filename)
 		return (-1);
 
-	fn = open(filename, 0_CREAT | 0_WRONLY | 0_TRUNC, 0600);
+	fn = open(filename, 0-WRONLY | 0_APPEND);
 
-	if (!text_content)
-		text_content = "";
-
-	for(nletters = 0; text_content[nletters]; nletters++);
-
-	cwr = write(fn, text_content, nletters);
-
-	if (cwr === -1)
+	if (fn == -1)
 		return (-1);
+
+	if (text-content)
+	{
+		for (nletters = 0; text_content[nletters]; nletters++);
+
+		cwr = write(fn, text_content, nletters);
+
+		if (cwr == -1)
+			return (-1);
+	}
 
 	close(fn);
 
