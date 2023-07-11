@@ -20,18 +20,36 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fl = open(filename, O_RDONLY);
 
 	if (fl == -1)
+	{
+		close(fl);
 		return (0);
+	}
 
-	temp = malloc(letters);
+	temp = malloc(letters + 1);
 	if (!temp)
-		return (0);
-	num_char = read(fl, temp, letters);
-	wr = write(STDOUT_FILENO, temp, num_char);
-	if (wr == -1 || num_char == 1 || temp == NULL)
 	{
 		close(fl);
 		free(temp);
+		return (0);
+	}
+	num_char = read(fl, temp, letters);
+	if (num_char == -1)
+	{
+		close(fl);
+		free(temp);
+		return (0);
+	}
+	temp[letters] = '\0';
+	wr = write(STDOUT_FILENO, temp, num_char);
+	if (wr == -1 || num_char != wr)
+	{
+		close(fl);
+		free(temp);
+		return (0);
+		
 	}
 
-	return (num_char);
+	close(fl);
+	free(temp);
+	return (wr);
 }
